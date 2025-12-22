@@ -2,10 +2,13 @@ package main.java.evaluator;
 
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println("LLM Safety Evaluator");
-        System.out.println("test commit");
-        System.out.println("hi");
-
+        try {
+            PromptLoader loader = new PromptLoader("prompts.json");
+            System.out.println("Role-play prompts: " + loader.getRolePlayPrompts());
+            System.out.println("Instuction Overloading prompts: " + loader.getInstructionOverloadPrompts());
+            System.out.println("Ethical Framing prompts: " + loader.getEthicalFramingPrompts());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

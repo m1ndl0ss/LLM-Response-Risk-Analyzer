@@ -8,9 +8,9 @@ import java.util.List;
 
 
 public class PromptLoader {
-    private List<String> rolePlayPrompts = new ArrayList<>();
-    private List<String> instructionOverloadPrompts = new ArrayList<>();
-    private List<String> ethicalFramingPrompts = new ArrayList<>();
+    private final List<String> rolePlayPrompts = new ArrayList<>();
+    private final List<String> instructionOverloadPrompts = new ArrayList<>();
+    private final List<String> ethicalFramingPrompts = new ArrayList<>();
 
     public PromptLoader(String filepath) throws IOException{
         loadPrompts(filepath);
