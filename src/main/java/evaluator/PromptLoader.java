@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+    
 
 public class PromptLoader {
     private final List<String> rolePlayPrompts = new ArrayList<>();

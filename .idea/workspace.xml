@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4104689f-307e-4e42-ba81-3cded8f6aede" name="Changes" comment="gitignore, added prompt files">
-      <change beforePath="$PROJECT_DIR$/.idea/LLM-Response-Risk-Analyzer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LLM-Response-Risk-Analyzer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LLM-Response-Risk-Analyzer/main/java/evaluator/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LLM-Response-Risk-Analyzer/main/java/evaluator/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/evaluator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/evaluator/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/evaluator/PromptLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/evaluator/PromptLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
