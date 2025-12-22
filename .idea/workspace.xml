@@ -20,14 +20,14 @@
   }
 }</component>
   <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="2385006f-aaa3-43a9-8ffc-61a4a6272bae" />
+    <option name="defaultAccountId" value="c11f2215-0098-4de3-96ec-9571a4b14a02" />
   </component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/m1ndl0ss/LLM-Response-Risk-Analyzer.git&quot;,
-    &quot;accountId&quot;: &quot;2385006f-aaa3-43a9-8ffc-61a4a6272bae&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/m1ndl0ss/LLM-Response-Risk-Analyzer.git",
+    "accountId": "c11f2215-0098-4de3-96ec-9571a4b14a02"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
