@@ -1,3 +1,33 @@
-# Default ignored files
-/shelf/
-/workspace.xml
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# Java / Maven / Gradle
+target/
+build/
+
+# Logs
+*.log
+
+# Environment / secrets
+.env
+*.key
+*.token
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Compiled classes
+*.class
+
+# Generated files
+*.jar
+*.war
+*.ear
+
+# Prompt file (private)
+prompts.txt
+prompts.json
