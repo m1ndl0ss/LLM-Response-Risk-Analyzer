@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4104689f-307e-4e42-ba81-3cded8f6aede" name="Changes" comment="gitignore, added prompt files" />
+    <list default="true" id="4104689f-307e-4e42-ba81-3cded8f6aede" name="Changes" comment="gitignore, added prompt files">
+      <change afterPath="$PROJECT_DIR$/spec.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +34,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="37CWhNwMdr38RFWb3BxK3C5S8o5" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
