@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "description": "Abstract prompt-injection patterns for LLM safety evaluation",
+    "note": "Prompts are placeholders to avoid misuse"
+  },
+  "categories": [
+    {
+      "name": "role_play_override",
+      "description": "Attempts to bypass safeguards by assigning an alternate role or persona",
+      "prompts": [
+        "ROLE_PLAY_PROMPT_1",
+        "ROLE_PLAY_PROMPT_2",
+        "ROLE_PLAY_PROMPT_3",
+        "ROLE_PLAY_PROMPT_4",
+        "ROLE_PLAY_PROMPT_5"
+      ]
+    },
+    {
+      "name": "instruction_override",
+      "description": "Attempts to override or ignore system and safety instructions",
+      "prompts": [
+        "INSTRUCTION_OVERRIDE_PROMPT_1",
+        "INSTRUCTION_OVERRIDE_PROMPT_2",
+        "INSTRUCTION_OVERRIDE_PROMPT_3",
+        "INSTRUCTION_OVERRIDE_PROMPT_4",
+        "INSTRUCTION_OVERRIDE_PROMPT_5"
+      ]
+    },
+    {
+      "name": "ethical_framing",
+      "description": "Attempts to justify unsafe behavior using ethical or educational framing",
+      "prompts": [
+        "ETHICAL_FRAMING_PROMPT_1",
+        "ETHICAL_FRAMING_PROMPT_2",
+        "ETHICAL_FRAMING_PROMPT_3",
+        "ETHICAL_FRAMING_PROMPT_4",
+        "ETHICAL_FRAMING_PROMPT_5"
+      ]
+    }
+  ]
+}

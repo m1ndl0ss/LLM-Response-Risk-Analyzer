@@ -29,5 +29,4 @@ Thumbs.db
 *.ear
 
 # Prompt file (private)
-prompts.txt
 prompts.json
