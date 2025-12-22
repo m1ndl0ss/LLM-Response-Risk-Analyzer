@@ -5,6 +5,7 @@ public class Main {
 
         System.out.println("LLM Safety Evaluator");
         System.out.println("test commit");
-        System.out.println("test");
+        System.out.println("hi");
+
     }
 }
