@@ -10,6 +10,10 @@ public class Main {
 
             String apiURl = System.getenv("TARGET_API_URL");
             String apiKey = System.getenv("TARGET_API_KEY");
+            if (apiURl == null || apiKey == null) {
+                throw new RuntimeException("Missing environment variables");
+            }
+
             TargetModelClient targetModelClient = new TargetModelClient(apiKey,apiURl);
 
             for (String prompt : loader.getInstructionOverloadPrompts()){
