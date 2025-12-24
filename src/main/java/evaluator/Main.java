@@ -1,17 +1,17 @@
 package main.java.evaluator;
-import java.sql.SQLOutput;
 import java.util.List;
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+
         try {
             PromptLoader loader = new PromptLoader("prompts.json");
             System.out.println("Role-play prompts: " + loader.getRolePlayPrompts());
             System.out.println("Instuction Overloading prompts: " + loader.getInstructionOverloadPrompts());
             System.out.println("Ethical Framing prompts: " + loader.getEthicalFramingPrompts());
 
-            //those should be in os config for privacy reasons
+            //those should be in os config for privacy reasons. go to env variables and make em
             String targetApiUrl = System.getenv("TARGET_API_URL");
             String targetApiKey = System.getenv("TARGET_API_KEY");
 
