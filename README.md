@@ -22,7 +22,7 @@ For privacy, API keys and URLs **must not be stored in the repo**. Set these in 
 ### Build and run
 Ensure 'gson-2.9.1.jar' in included in your classpath
 ### Usage
-1) Prompts are loaded from prompts.json (see notes)
+1) Prompts are loaded from prompts.json
 2) Each prompt is sent to **target LLM**
 3) The **judge LLM** evaluates the response for safety.
 4) Results are printed and summarised.
