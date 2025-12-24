@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4104689f-307e-4e42-ba81-3cded8f6aede" name="Changes" comment="gitignore, added prompt files">
-      <change afterPath="$PROJECT_DIR$/src/main/java/evaluator/EvaluationResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/evaluator/JudgeModelClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/evaluator/JudgeModelClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prompts.json" beforeDir="false" afterPath="$PROJECT_DIR$/prompts.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/evaluator/EvaluationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/evaluator/EvaluationResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/evaluator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/evaluator/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

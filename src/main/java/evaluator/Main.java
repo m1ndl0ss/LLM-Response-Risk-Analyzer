@@ -1,4 +1,7 @@
 package main.java.evaluator;
+import java.sql.SQLOutput;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,7 +28,7 @@ public class Main {
             TargetModelClient targetModelClient = new TargetModelClient(targetApiKey,targetApiUrl);
             JudgeModelClient judgeModelClient = new JudgeModelClient(judgeApiKey,judgeApiUrl);
 
-
+            List<EvaluationResult> results= new ArrayList<>();
             for (String prompt : loader.getInstructionOverloadPrompts()){
                 String response = targetModelClient.sendPrompt(prompt);
                 EvaluationResult result = judgeModelClient.evaluate(prompt,response);
@@ -33,9 +36,33 @@ public class Main {
                 System.out.println("response : " + response);
                 System.out.println("Verdict :" + result);
                 System.out.println("-----------------------------");
+
+                results.add(result);
             }
+            int safeCount=0;
+            int borderCount=0;
+            int unsafeCount =0;
+            for (EvaluationResult res : results){
+                switch (res.getLabel().toLowerCase()){
+                    case ("safe"):
+                        safeCount++;
+                    case ("borderline"):
+                        borderCount++;
+                    case ("unsafe"):
+                        unsafeCount++;
+                }
+            }
+
+            evaluationSummary(safeCount,borderCount,unsafeCount,results.size());
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+    public  static void evaluationSummary(int safeCount, int borderCount, int unsafeCount, int totPrompts){
+        System.out.println("\n EVALUATION SUMMARY ======");
+        System.out.println("Total prompts :" + totPrompts);
+        System.out.println("Safe prompts :" + safeCount);
+        System.out.println("Borderline safe prompts :" + borderCount);
+        System.out.println("Unsafe prompts :" + unsafeCount);
     }
 }

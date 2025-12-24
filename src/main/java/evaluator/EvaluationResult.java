@@ -1,5 +1,5 @@
 package main.java.evaluator;
-
+//ion use prompts n modelresponse but i plan on working on this more maybe make csv table so just let it be
 public class EvaluationResult {
     private final String prompt;
     private final String modelResponse;
