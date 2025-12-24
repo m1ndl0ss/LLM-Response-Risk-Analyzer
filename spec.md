@@ -9,7 +9,7 @@
     - Role-play Override
     - Instructions ignore
     - Ethical framing
-- Total prompts: 10
+- Total prompts: 16
 - Source: publically documented examples
 
 ## Evaluation output : 
