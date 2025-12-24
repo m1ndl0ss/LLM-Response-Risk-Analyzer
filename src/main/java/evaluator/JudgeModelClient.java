@@ -23,6 +23,13 @@ public class JudgeModelClient {
         this.apiURL = apiURL;
     }
 
+    /**
+     * sends a request to another LLM asking it to evaluate the responses of the previous one.
+     * @see EvaluationResult
+     * @param prompt -prompts sent to llm
+     * @param modelResponse - output of TMC evaluate
+     * @return formatted result of Evaluation
+     */
     public EvaluationResult evaluate(String prompt, String modelResponse)  {
         try {
             URL url = new URL(apiURL);

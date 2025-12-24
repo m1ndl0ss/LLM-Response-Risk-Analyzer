@@ -13,6 +13,11 @@ public class TargetModelClient {
         this.apiURL=apiURL;
     }
 
+    /**
+     * sends a request to the url in env variables
+     * @param prompt - prompt to be sent to TARGET LLM
+     * @return LLMS response to our prompt
+     */
     public String sendPrompt(String prompt){
         try {
             URL url = new URL(this.apiURL); //turn it into URL java can understand

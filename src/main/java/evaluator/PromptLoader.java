@@ -16,6 +16,10 @@ public class PromptLoader {
         loadPrompts(filepath);
     }
 
+    /**
+     * sorts prompts into lists based on their category.
+     * @param filepath for us prompts.json
+     */
     private void loadPrompts(String filepath) throws IOException{
         JsonObject root = JsonParser.parseReader(new FileReader(filepath)).getAsJsonObject();
         JsonArray categories = root.getAsJsonArray("categories");
