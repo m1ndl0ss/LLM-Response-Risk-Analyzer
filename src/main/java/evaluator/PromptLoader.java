@@ -1,55 +1,71 @@
-package main.java.evaluator;
+package evaluator;
 
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
-    
+import java.util.Map;
 
+/**
+ * Loads prompt-injection test prompts from a JSON file, grouped by category.
+ *
+ * Entries whose text starts with "REDACTED_" are placeholders for prompts
+ * that are intentionally not published; they are skipped at load time.
+ */
 public class PromptLoader {
-    private final List<String> rolePlayPrompts = new ArrayList<>();
-    private final List<String> instructionOverloadPrompts = new ArrayList<>();
-    private final List<String> ethicalFramingPrompts = new ArrayList<>();
 
-    public PromptLoader(String filepath) throws IOException{
-        loadPrompts(filepath);
+    static final String REDACTED_PREFIX = "REDACTED_";
+
+    private final Map<String, List<String>> promptsByCategory = new LinkedHashMap<>();
+    private int redactedCount = 0;
+
+    public PromptLoader(String filepath) throws IOException {
+        load(filepath);
     }
 
-    /**
-     * sorts prompts into lists based on their category.
-     * @param filepath for us prompts.json
-     */
-    private void loadPrompts(String filepath) throws IOException{
-        JsonObject root = JsonParser.parseReader(new FileReader(filepath)).getAsJsonObject();
+    private void load(String filepath) throws IOException {
+        JsonObject root;
+        try (FileReader reader = new FileReader(filepath, StandardCharsets.UTF_8)) {
+            root = JsonParser.parseReader(reader).getAsJsonObject();
+        }
         JsonArray categories = root.getAsJsonArray("categories");
-
-        for (JsonElement categoryElement : categories){
+        for (JsonElement categoryElement : categories) {
             JsonObject category = categoryElement.getAsJsonObject();
             String name = category.get("name").getAsString();
-            JsonArray prompts = category.getAsJsonArray("prompts");
-
-            for (JsonElement promptElement : prompts){
+            List<String> prompts = promptsByCategory.computeIfAbsent(name, k -> new ArrayList<>());
+            for (JsonElement promptElement : category.getAsJsonArray("prompts")) {
                 String prompt = promptElement.getAsString();
-
-                switch (name){
-                    case "role_play_override":
-                        rolePlayPrompts.add(prompt);
-                        break;
-                    case "instruction_override":
-                        instructionOverloadPrompts.add(prompt);
-                        break;
-                    case "ethical_framing":
-                        ethicalFramingPrompts.add(prompt);
-                        break;
-                    default:
-                        System.out.println("unknown category");
-                        break;
+                if (prompt.startsWith(REDACTED_PREFIX)) {
+                    redactedCount++;
+                } else {
+                    prompts.add(prompt);
                 }
             }
         }
     }
-    public List<String> getRolePlayPrompts(){return rolePlayPrompts;}
-    public List<String> getInstructionOverloadPrompts(){return instructionOverloadPrompts;}
-    public List<String> getEthicalFramingPrompts(){return ethicalFramingPrompts;}
+
+    /** Loaded prompts grouped by category name, in file order. Redacted entries are excluded. */
+    public Map<String, List<String>> getPromptsByCategory() {
+        return Collections.unmodifiableMap(promptsByCategory);
+    }
+
+    /** All loaded prompts across categories, in file order. Redacted entries are excluded. */
+    public List<String> getAllPrompts() {
+        List<String> all = new ArrayList<>();
+        promptsByCategory.values().forEach(all::addAll);
+        return all;
+    }
+
+    /** Number of redacted placeholder entries that were skipped. */
+    public int getRedactedCount() {
+        return redactedCount;
+    }
 }
