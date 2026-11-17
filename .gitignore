@@ -1,17 +1,19 @@
-# IntelliJ IDEA
+# Build output
+target/
+out/
+*.class
+dependency-reduced-pom.xml
+
+# IDE
 .idea/
 *.iml
 *.iws
-out/
-
-# Java / Maven / Gradle
-target/
-build/
+.vscode/
 
 # Logs
 *.log
 
-# Environment / secrets
+# Secrets
 .env
 *.key
 *.token
@@ -19,14 +21,3 @@ build/
 # OS files
 .DS_Store
 Thumbs.db
-
-# Compiled classes
-*.class
-
-# Generated files
-*.jar
-*.war
-*.ear
-
-# Prompt file (private)
-prompts.json
